@@ -1,0 +1,45 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "esModuleInterop": true,
+    "allowJs": true,
+    "alwaysStrict": true,
+    "module": "esnext",
+    "incremental": true,
+    "outDir": "dist",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "target": "es2018",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./typings"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "coverage",
+    "dist",
+    "node_modules"
+  ]
+}
