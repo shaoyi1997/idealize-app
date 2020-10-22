@@ -36,7 +36,7 @@ export const IdeaCard: React.FC<Props> = ({ idea, deleteIdea, fetchIdeas }) => {
       <Styles.Container>
         <div
           className="additional"
-          onMouseEnter={() => setLightBulbColor('yellow')}
+          onMouseEnter={() => setLightBulbColor('#fdfd96')}
           onMouseLeave={() => setLightBulbColor('white')}
         >
           <Styles.UserCard>

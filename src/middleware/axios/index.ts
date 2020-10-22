@@ -38,5 +38,5 @@ export function makeFullUrlApiCall(
   options?: CallAPIOptions,
   method: RequestMethod = 'get',
 ) {
-  return makeApiCall(`http://localhost:8080/api/${endpoint}`, options, method);
+  return makeApiCall(`http://localhost:80/api/${endpoint}`, options, method);
 }

@@ -32,7 +32,6 @@ export const Container = styled.div`
   &:hover .additional {
     width: 100%;
     border-radius: 0 5px 5px 0;
-    background: linear-gradient(${COLORS.red}, #ee786e);
   }
 `;
 
@@ -70,6 +69,8 @@ export const UserCard = styled.div`
 
   svg {
     width: 90px;
+    fill: 
+    transition: fill 300ms ease-in;
   }
 `;
 
