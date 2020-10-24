@@ -13,8 +13,6 @@ RUN yarn && \
 # Load our application's code in.
 COPY . .
 
-RUN yarn build
-
 # Add metadata to the image to describe which port the container is listening on at runtime.
 EXPOSE 3000
 

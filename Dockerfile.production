@@ -13,6 +13,8 @@ RUN yarn && \
 # Load our application's code in.
 COPY . .
 
+ENV REACT_APP_API_URL=http://idealize.hongshaoyi.me
+
 RUN yarn build
 
 # see https://mherman.org/blog/dockerizing-a-react-app/

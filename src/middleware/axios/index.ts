@@ -38,5 +38,6 @@ export function makeFullUrlApiCall(
   options?: CallAPIOptions,
   method: RequestMethod = 'get',
 ) {
-  return makeApiCall(`http://localhost:80/api/${endpoint}`, options, method);
+  const baseURL = process.env.REACT_APP_API_URL ?? 'http://localhost:80';
+  return makeApiCall(`${baseURL}/api/${endpoint}`, options, method);
 }
