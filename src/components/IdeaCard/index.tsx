@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Button, Layer } from 'grommet';
+import { Layer } from 'grommet';
 
 import * as Styles from './styles';
 import { LightBulb } from '../Icons/LightBulb';
@@ -29,7 +29,7 @@ export const IdeaCard: React.FC<Props> = ({ idea, deleteIdea, fetchIdeas }) => {
               fetchIdeas();
             }}
             isUpdateForm={true}
-            id={idea.ideaId}
+            selectedIdea={idea}
           />
         </Layer>
       )}
@@ -68,8 +68,14 @@ export const IdeaCard: React.FC<Props> = ({ idea, deleteIdea, fetchIdeas }) => {
                 gap="medium"
                 justify="center"
               >
-                <Button label="Edit" onClick={() => setShowUpdateModal(true)} />
-                <Button
+                <Styles.Button
+                  label="Edit"
+                  onFocus={e => {
+                    e.target.blur();
+                  }}
+                  onClick={() => setShowUpdateModal(true)}
+                />
+                <Styles.Button
                   label="Delete"
                   onClick={() => deleteIdea(idea.ideaId)}
                 />

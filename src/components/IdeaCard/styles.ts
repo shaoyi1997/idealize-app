@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Box } from 'grommet';
+import { Box, Button as GButton } from 'grommet';
 
 import { COLORS } from '../../common/constants';
 
@@ -69,7 +69,6 @@ export const UserCard = styled.div`
 
   svg {
     width: 90px;
-    fill: 
     transition: fill 300ms ease-in;
   }
 `;
@@ -160,5 +159,17 @@ export const General = styled.div`
     bottom: 1rem;
     right: 1rem;
     font-size: 0.7em;
+  }
+`;
+
+export const Button = styled(GButton).attrs({
+  primary: true,
+  color: 'white',
+  tabIndex: -1,
+})`
+  border-width: 2px;
+
+  &:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 `;

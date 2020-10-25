@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Form, FormField, TextInput, Button } from 'grommet';
 
+import { IIdea } from '../../common/interfaces';
 import * as Styles from './styles';
 import { makeFullUrlApiCall } from '../../middleware/axios';
 
@@ -12,17 +13,17 @@ interface FormValues {
 interface Props {
   afterSubmit?: () => void;
   isUpdateForm?: boolean;
-  id?: string;
+  selectedIdea?: IIdea;
 }
 
 export const IdeaForm: React.FC<Props> = ({
   afterSubmit,
   isUpdateForm = false,
-  id,
+  selectedIdea,
 }) => {
   const [value, setValue] = React.useState<FormValues>({
-    title: '',
-    description: '',
+    title: selectedIdea ? selectedIdea.title : '',
+    description: selectedIdea ? selectedIdea.description : '',
   });
   const [isLoading, setIsLoading] = React.useState(false);
 
@@ -37,7 +38,7 @@ export const IdeaForm: React.FC<Props> = ({
     setIsLoading(true);
 
     if (isUpdateForm) {
-      await makeFullUrlApiCall(`idea/id/${id}`, value, 'put');
+      await makeFullUrlApiCall(`idea/id/${selectedIdea?.ideaId}`, value, 'put');
     } else {
       await makeFullUrlApiCall('idea/create', value, 'post');
     }
